@@ -22,9 +22,17 @@
     주의할 점은 함수 참조가 아닌 함수 호출문을 할당한다는 것이다. 
     </pre>
 
-    <button onclick="alert('클릭했다!'); console.log('클릭했다!');">클릭해보세요</button>
+    <button onclick="test(); console.log('클릭');">클릭해보세요</button>
     <button onmouseover="hello('다람쥐');">마우스를 올려보세요</button>
 
-    
+    <script>
+        function hello(name){
+            alert (`${name}님 안녕하세요`);
+        }
+        function test(){
+            alert('클릭');
+            console.log('클릭');
+        }
+    </script>
 </body>
 </html>

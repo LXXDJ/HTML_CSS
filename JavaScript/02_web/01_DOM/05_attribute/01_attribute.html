@@ -17,14 +17,30 @@
     <label for="username">유저명</label>
     <input type="text" id="username" value="user01">
 
-  
+    <script>
+        const {attributes} = document.getElementById('username');
+        // const attributes = document.getElementById('username').attributes;
+
+        console.log(attributes);                // NamedNodeMap {0: type, 1: id, 2: value, type: type, id: id, value: value, length: 3}
+
+        console.log(attributes.type.value);     // text
+        console.log(attributes.id.value);       // username
+        console.log(attributes.value.value);    // user01
+    </script>  
 
     <pre>
     Element.prototype.getAttribute/setAttribute 메서드를 사용하면 attributes 프로퍼티를 통하지 않고 
     요소 노드에서 메서드를 통해 직접 HTML 어트리뷰트 값을 취득하거나 변경할 수 있어 편리하다. 
     </pre>
+    <script>
+        const $input = document.getElementById('username');
 
-   
+        const inputValue = $input.getAttribute('value');
+        console.log(inputValue);                // user01
+
+        $input.setAttribute('value', 'user02');
+        console.log(attributes.value.value);    // user02
+    </script>   
 
     <pre>
     Element.prototype.hasAttribute(attributeName) 메서드를 사용하면 특정 HTML 어트리뷰트가 존재하는지 확인할 수 있다.
@@ -34,6 +50,18 @@
     <label for="nickname">닉네임</label>
     <input type="text" id="nickname" value="JSMaster">
 
+    <script>
+        const $nickname = document.getElementById('nickname');
+
+        console.log($nickname.hasAttribute('name'));    // false
+        console.log($nickname.hasAttribute('value'));   // true        
+
+        if($nickname.hasAttribute('value')) {
+            $nickname.removeAttribute('value');         // value 삭제
+        }
+
+        console.log($nickname.hasAttribute('value'));   // false
+    </script>
    
 </body>
 </html>

@@ -19,7 +19,21 @@
     <ul id="drink">
         <li>커피</li>
     </ul>
-  
+    <script>
+        const $drink = document.getElementById('drink');
+        const $li1 = document.createElement('li');
+        $li1.textContent = '콜라';
+        $drink.appendChild($li1);
+
+        const $li2 = document.createElement('li');
+        $li2.textContent = '우유';
+        $drink.insertBefore($li2, $drink.lastElementChild);
+        // $drink.insertBefore($li2, document.querySelector('pre'));   // 에러 발생 : 두번째 인자는 $drink의 자식 노드여야 한다.
+
+        const $li3 = document.createElement('li');
+        $li3.textContent = '사이다';
+        $drink.insertBefore($li3, null);    // null보다 앞에 넣을 경우, 제일 마지막 요소로 추가 된다.
+    </script>
 
     <h3>노드 이동</h3>
     
@@ -32,8 +46,16 @@
         <li>파스타</li>
         <li>피자</li>
     </ul>
+    <script>
+        const $food = document.getElementById('food');
 
-   
+        // const $pasta = $food.firstElementChild;
+        // const $pizza = $food.lastElementChild;
+        const [$pasta, $pizza] = $food.children;
+
+        $drink.appendChild($pasta);
+        $drink.insertBefore($pizza, $pasta);
+    </script>   
     
 </body>
 </html>

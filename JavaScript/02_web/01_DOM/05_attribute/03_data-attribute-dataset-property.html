@@ -20,7 +20,17 @@
         <li data-board-id="15" data-category-id="2">한강 러닝 크루 구해요!</li>
         <li data-board-id="18" data-category-id="3">요즘 재테크 어떻게 하시나요?</li>
     </ul>
+    <script>
+        const boardlist = Array.from(document.querySelector('.boardlist').children);
+        
+        boardlist.forEach(board => console.log(board.dataset)); // DOMStringMap 객체 반환 출력
 
+        const board = boardlist.find(board => board.dataset.categoryId === '1');
+        board.dataset.categoryId = '4';
+
+        // 새로운 어트리뷰트 추가
+        board.dataset.boardWriter = 'JSMaster';
+    </script>
   
 </body>
 </html>

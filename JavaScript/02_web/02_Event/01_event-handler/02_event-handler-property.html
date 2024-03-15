@@ -19,6 +19,15 @@
 
     <button id="btn">클릭해보세요</button>
    
-    
+    <script>
+        const $btn = document.querySelector("#btn");
+
+        $btn.onclick = function(){
+            alert('DOM 프로퍼티 방식으로 이벤트 핸들러 등록');
+        }
+
+        // 이전 이벤트는 무시됨. 하나의 이벤트만 연결 가능
+        $btn.onclick = () => alert('이벤트 추가');
+    </script>
 </body>
 </html>

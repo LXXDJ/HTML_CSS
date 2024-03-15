@@ -16,6 +16,16 @@
     </pre>
     <div style="color: white;">AREA</div>
 
-   
+    <script>
+        const $area = document.querySelector('div');
+        
+        console.log($area.style);
+        
+        $area.style.width = '100px';
+        $area.style.height = '100px';
+        
+        $area.style.backgroundColor = 'lightgray';        
+        $area.style['background-color'] = 'red';
+    </script>
 </body>
 </html>

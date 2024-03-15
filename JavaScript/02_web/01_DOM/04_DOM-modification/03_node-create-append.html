@@ -17,14 +17,39 @@
     <ul id="drink">
         <li>커피</li>
     </ul>
+    <script>
+        const $drink = document.getElementById('drink');
 
-   
+        const $li = document.createElement('li');           // 요소 노드 생성
+
+        // const textNode = document.createTextNode('콜라');   // 텍스트 노드 생성
+
+        // $li.appendChild(textNode);
+        // $drink.appendChild($li);
+
+        $li.textContent = '콜라';   // li에 textContent로 바로 입력하는게 더 간단하다.
+        $drink.appendChild($li);
+    </script>   
 
     <h3>복수의 노드 생성과 추가</h3>
     <ul id="food">
         <li>김치찌개</li>
     </ul>
+    <script>
+        const $food = document.getElementById('food');
 
+        // DocumentFragment : 별도의 서브 DOM을 구성하여 기존 DOM에 추가하기 위한 용도로 사용하는 임시 컨테이너
+        const $fragment = document.createDocumentFragment();
+
+        ['된장찌개', '고등어구이', '순대국'].forEach(text => {
+            const $li = document.createElement('li');
+            $li.textContent = text;
+
+            $fragment.appendChild($li);
+        })
+
+        $food.appendChild($fragment);
+    </script>
    
 </body>
 </html>

@@ -27,6 +27,18 @@
         <li>우유</li>
     </ul>
 
-   
+    <script>
+        // li마다 이벤트 핸들러를 등록할수도 있지만, 상위 요소인 ul에 한번만 이벤트 핸들러를 등록하면 더 간단
+        const $drink = document.getElementById('drink');
+        $drink.addEventListener('click', e => {
+            if(e.target.matches('li')){
+                highlight(e.target);
+            }
+        })
+
+        function highlight(li){
+            li.classList.toggle('highlight');
+        }
+    </script>
 </body>
 </html>

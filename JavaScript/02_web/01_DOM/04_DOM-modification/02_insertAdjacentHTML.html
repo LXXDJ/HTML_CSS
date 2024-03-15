@@ -23,6 +23,20 @@
         insertAdjacentHTML 메소드 사용 테스트
     </div>
 
+    <script>
+        const $area = document.getElementById('area');
+
+        // beforebegin : 형제태그로, area 태그보다 앞쪽에
+        // afterbegin : 자식태그로, area 태그 내 맨 앞쪽에
+        $area.insertAdjacentHTML('beforebegin', '<h1>beforebegin 테스트</h1>');
+        $area.insertAdjacentHTML('afterbegin', '<h1>afterbegin 테스트</h1>');
+
+        // beforeend : 자식태그로, area 태그 내 맨 뒤쪽에
+        // afterend : 형제태그로, area 태그보다 뒤쪽에
+        $area.insertAdjacentHTML('beforeend', '<h1>beforeend 테스트</h1>');
+        $area.insertAdjacentHTML('afterend', '<h1>afterend 테스트</h1>');
+
+    </script>
    
 </body>
 </html>
