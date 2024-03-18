@@ -18,7 +18,10 @@
     콜백 함수에 전달해야 하는 인수가 존재하는 경우 세 번째 이후의 인수로 전달할 수 있다. 
     </pre>
 
-   
+    <script>
+        setTimeout(() => console.log('1초'), 1000);
+        setTimeout((msg) => console.log(`1..2..3..${msg}`), 3000, 'message');
+    </script>
     
     <h3>clearTimeout</h3>
     <pre>
@@ -26,6 +29,10 @@
     반환한 id를 clearTimeout 함수의 인수로 전달하여 타이머를 취소할 수 있다. 
     </pre>
 
-   
+    <script>
+        const timerId = setTimeout(() => console.log('취소'), 2000);
+        console.log(timerId);   // 브라우저 환경에서는 숫자 반환, Node.js 환경에서는 객체 반환
+        clearTimeout(timerId);
+    </script>
 </body>
 </html>

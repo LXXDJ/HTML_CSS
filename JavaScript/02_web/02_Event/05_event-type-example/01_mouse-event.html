@@ -28,5 +28,38 @@
     <button>클릭해보세요</button>
     <div class="area"></div>
     
+    <script>
+        const $btn = document.querySelector('button');
+        const $area = document.querySelector('.area');
+
+        // e.button = 숫자(마우스의 어떤 버튼으로 이벤트를 실행했는지)
+        // 0: 좌클릭, 1: 휠클릭, 2:우클릭
+        // $btn.onmousedown = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'mousedown button = ' + e.button + '<br/>');
+        // }
+        // $btn.onmouseup = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'mouseup button='+ e.button + "<br>");
+        // };
+
+        // $btn.onmouseover = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'mouseover button=' + e.button + "<br>");
+        // };
+        // $btn.onmouseout = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'mouseout button=' + e.button + "<br>");
+        // };
+
+        // $btn.onclick = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'click button=' +e.button + "<br>");
+        // };
+        // $btn.ondblclick = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'dblclick button=' + e.button + "<br>");
+        // };
+
+        // oncontextmenu : 우클릭 해서 컨텍스트메뉴를 열었을 때
+        // $btn.oncontextmenu = (e) => {
+        //     $area.insertAdjacentHTML('beforeend', 'contextmenu button=' + e.button + "<br>");
+        // };
+    </script>
+    
 </body>
 </html>
